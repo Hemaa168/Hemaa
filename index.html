@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day Baby</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.5s ease;
+        }
+
+        h1 {
+            color: #e8491d;
+        }
+
+        #flower-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        #cute-image {
+            max-width: 80%;
+            height: auto;
+            border-radius: 10px;
+            margin-top: 20px;
+            display: none;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .button-container {
+            margin-top: 20px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+
+        #yes-button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        #no-button {
+            background-color: #e8491d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        #message {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Happy Valentine's Day!</h1>
+    <p>Here's a beautiful flower for you:</p>
+    <img id="flower-image" src="https://i.pinimg.com/originals/a5/2a/67/a52a67203fbeb95f78e6f9c816287153.gif" alt="Valentine's Day Flower">
+    <p>Would you be my Valentine?</p>
+
+    <div class="button-container">
+        <button id="yes-button" class="button" onclick="handleYesClick()">Yes</button>
+        <button id="no-button" class="button" onclick="handleNoClick()">No</button>
+    </div>
+
+    <div id="message"></div>
+
+    <img id="cute-image" src="" alt="Cute Image or GIF" />
+
+    <script>
+        let noClickCount = 0;
+
+        function showMessage(text) {
+            document.getElementById('message').innerText = text;
+        }
+
+        function clearMessage() {
+            document.getElementById('message').innerText = '';
+        }
+
+        function handleYesClick() {
+            showMessage('Wow love u');
+            document.body.style.backgroundColor = '#cfe8fc'; // Change background color
+            displayImage('https://i.pinimg.com/originals/4f/47/d1/4f47d14cb35629ba81c2cc2ab59395b0.gif'); // Replace with your image URL
+            setTimeout(clearMessage, 10000); // Clear message after 2 seconds
+        }
+
+        function handleNoClick() {
+            noClickCount++;
+
+            if (noClickCount === 1) {
+                showMessage('Really?');
+            } else if (noClickCount === 2) {
+                showMessage('Are you sure?');
+            } 
+            else if (noClickCount === 3) {
+                showMessage('You wanna thinking again?');
+            } 
+            else if (noClickCount === 4) {
+                showMessage('You are so selfish');
+            } else {
+                showMessage('Okay, if you say no so...');
+            }
+
+            document.body.style.backgroundColor = '#fcdede'; // Change background color
+            displayImage('https://gifdb.com/images/high/cute-mad-cat-opvf76zcr2w5ryza.gif'); // Replace with your image URL
+            setTimeout(clearMessage, 10000); // Clear message after 2 seconds
+
+            document.body.style.backgroundColor = '#fcdede'; // Change background color
+            displayImage('https://media0.giphy.com/media/aNFT7eG2rIKK715uLk/giphy.gif?cid=6c09b952oaw808u0bm2emscskgtsmxrygbs52fs268zgn9xl&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=g'); // Replace with your image URL
+            setTimeout(clearMessage, 10000); // Clear message after 2 seconds
+        }
+
+        function displayImage(imageUrl) {
+            document.getElementById('cute-image').src = imageUrl;
+            document.getElementById('cute-image').style.display = 'block';
+        }
+        
+    </script>
+</body>
+</html>
